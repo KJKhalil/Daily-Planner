@@ -3,7 +3,7 @@ $('#currentDay').html(date)
 
 $(document).ready(function() {
     $('.saveBtn').on('click', function () {
-        var text = $(this).siblings('.description').val();
+        var text = $(this).siblings('.task').val();
         var time = $(this).parent().attr('id');
         localStorage.setItem(time, text);
     })
@@ -35,16 +35,16 @@ $(document).ready(function() {
         })
     }
 
-    $('#hr8 .description').val(localStorage.getItem('hr8'));
-    $('#hr9 .description').val(localStorage.getItem('hr9'));
-    $('#hr10 .description').val(localStorage.getItem('hr10'));
-    $('#hr11 .description').val(localStorage.getItem('hr11'));
-    $('#hr12 .description').val(localStorage.getItem('hr12'));
-    $('#hr13 .description').val(localStorage.getItem('hr13'));
-    $('#hr14 .description').val(localStorage.getItem('hr14'));
-    $('#hr15 .description').val(localStorage.getItem('hr15'));
-    $('#hr16 .description').val(localStorage.getItem('hr16'));
-    $('#hr17 .description').val(localStorage.getItem('hr17'));
+    $('#hr8 .task').val(localStorage.getItem('hr8'));
+    $('#hr9 .task').val(localStorage.getItem('hr9'));
+    $('#hr10 .task').val(localStorage.getItem('hr10'));
+    $('#hr11 .task').val(localStorage.getItem('hr11'));
+    $('#hr12 .task').val(localStorage.getItem('hr12'));
+    $('#hr13 .task').val(localStorage.getItem('hr13'));
+    $('#hr14 .task').val(localStorage.getItem('hr14'));
+    $('#hr15 .task').val(localStorage.getItem('hr15'));
+    $('#hr16 .task').val(localStorage.getItem('hr16'));
+    $('#hr17 .task').val(localStorage.getItem('hr17'));
 
     timeFunction();
 

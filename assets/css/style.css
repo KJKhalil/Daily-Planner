@@ -13,6 +13,7 @@ textarea {
   padding: 10px;
 }
 
+/* Controls the text and background of the top section of the webpage and creates the dividing border between the top and timeblocks.*/
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -36,12 +37,14 @@ textarea {
   border-top: 1px solid white;
 }
 
+/* Creates the border around the time section of the timeblocks.*/
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
 
+/* Controls the colors of the task section of the timeblocks depending on if the time is in the past, present, or the future.*/
 .past {
   background-color: #d3d3d3;
   color: white;
@@ -57,6 +60,7 @@ textarea {
   color: white;
 }
 
+/* Controls the look of the save button when idle, hovered, and active.*/
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;

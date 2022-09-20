@@ -1,7 +1,9 @@
+// Shows the day and date in the top section of the webpage.
 var date = moment().format('dddd, MMM Do YYYY');
 $('#currentDay').html(date)
 
 $(document).ready(function() {
+    // Gives the save buttons their functionality making them set the text in the localStorage of the specfic timeblock.
     $('.saveBtn').on('click', function () {
         var text = $(this).siblings('.task').val();
         var time = $(this).parent().attr('id');
@@ -10,11 +12,13 @@ $(document).ready(function() {
 
 
     function timeFunction() {
+        // Detects the current time of the day.
         var currentTime = moment().hour();
 
         $('.time-block').each(function () {
             var timeBlock = parseInt($(this).attr('id').split('hr')[1]);
 
+            // Adds and removes classes based on wether that time block is in the past, the present, or in the future.
             if (timeBlock < currentTime) {
                 $(this).removeClass('future');
                 $(this).removeClass('present');
@@ -35,6 +39,7 @@ $(document).ready(function() {
         })
     }
 
+    // Allows you to get saved items from the localStorage even if the page is refreshed.
     $('#hr8 .task').val(localStorage.getItem('hr8'));
     $('#hr9 .task').val(localStorage.getItem('hr9'));
     $('#hr10 .task').val(localStorage.getItem('hr10'));

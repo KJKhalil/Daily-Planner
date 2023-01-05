@@ -3,13 +3,21 @@ var date = moment().format('dddd, MMM Do YYYY');
 $('#currentDay').html(date)
 
 $(document).ready(function() {
-    // Gives the save buttons their functionality making them set the text in the localStorage of the specfic timeblock.
-    $('.saveBtn').on('click', function () {
-        var text = $(this).siblings('.task').val();
-        var time = $(this).parent().attr('id');
-        localStorage.setItem(time, text);
-    })
+    // Gives the save buttons their functionality.
+    $('.time-block').each(function () {
+        var id = $(this).attr('id');
+        var task = localStorage.getItem(id);
 
+        if (task !== null) {
+            $(this).children('.task').val(task);
+        }
+    })
+    
+    $('.saveBtn').on('click', function () {
+        var task = $(this).siblings('.task').val();
+        var time = $(this).parent().attr('id');
+        localStorage.setItem(time, task);
+    })
 
     function timeFunction() {
         // Detects the current time of the day.
@@ -38,18 +46,6 @@ $(document).ready(function() {
             }
         })
     }
-
-    // Allows you to get saved items from the localStorage even if the page is refreshed.
-    $('#hr8 .task').val(localStorage.getItem('hr8'));
-    $('#hr9 .task').val(localStorage.getItem('hr9'));
-    $('#hr10 .task').val(localStorage.getItem('hr10'));
-    $('#hr11 .task').val(localStorage.getItem('hr11'));
-    $('#hr12 .task').val(localStorage.getItem('hr12'));
-    $('#hr13 .task').val(localStorage.getItem('hr13'));
-    $('#hr14 .task').val(localStorage.getItem('hr14'));
-    $('#hr15 .task').val(localStorage.getItem('hr15'));
-    $('#hr16 .task').val(localStorage.getItem('hr16'));
-    $('#hr17 .task').val(localStorage.getItem('hr17'));
 
     timeFunction();
 

@@ -20,8 +20,6 @@
 
 ## Daily-Planner Screenshot
 
-I will probably update this screenshot during a time between 8 a.m - 5 p.m. Just so the screenshot shows more of the planners functionality during the relevant times.
-
 ![Screenshot of Daily-Planner](./assets/images/Daily-Planner.png)
 
 ### Daily-Planner Deployed Github Link
